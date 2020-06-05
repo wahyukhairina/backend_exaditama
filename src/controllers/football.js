@@ -42,5 +42,7 @@ module.exports = {
             console.log(error)
             helper.customErrorResponse(response, 404, 'error')
         }
-    }
+    },
+    
+   
 }
