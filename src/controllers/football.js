@@ -25,7 +25,7 @@ module.exports = {
                 clubpoints: [homepoints, awaypoints]
             }
          await model.insertScore(data)
-            helper.response(response, 200, "data has been recorded")
+            helper.response(response, 200, request.body, "Data has been recorded")
         } catch (error) {
             console.log(error)
             helper.customErrorResponse(response, 404, 'error')
