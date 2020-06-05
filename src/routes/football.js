@@ -1,10 +1,10 @@
 const express = require('express')
 const Route = express.Router()
 
-const {insertScore} = require('../controllers/football')
+const {insertScore, allStanding} = require('../controllers/football')
 
 Route
-    .post('/', insertScore)
-    // .get('/leaguestanding', leaguestanding)
+    .post('/recordgame', insertScore)
+    .get('/leaguestanding', allStanding)
     // .get('/rank', rank)
 module.exports = Route
