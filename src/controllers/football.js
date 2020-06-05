@@ -44,5 +44,26 @@ module.exports = {
         }
     },
     
-   
+    clubRank: async (request, response) => {
+        try{
+            const clubname = request.query.clubname;
+          
+            const result = await model.getAll()
+            const data = result;
+            let index = data.map(function(e) { return e.clubname}).indexOf(clubname);
+            console.log(index, 'index')
+            if(++index == 0) {
+               helpers.customErrorResponse(response, 404, "Not Found!")
+            }else {
+                const data = result[--index]
+                data.standing = ++index
+                helper.response(response, 200, data)
+            }
+        }
+        catch{
+            console.log(error)
+            helper.customErrorResponse(response, 404, 'error')
+      
+        }
+    }
 }
