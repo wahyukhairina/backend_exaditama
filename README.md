@@ -27,6 +27,8 @@ Football League Table is a Backend Service to track all points after game, while
 <ol>
   <li>Basic Configuration</li>
   - Node.js - Download and Install [Node.js](https://nodejs.org/en/)
+   <li>Database Configuration</li>
+  - import sql file exaditama.sql to your database 
 </ol>
 
 ---
