@@ -1,6 +1,7 @@
 const model = require('../models/football.js')
 const helper = require('../helpers')
 
+
 module.exports = {
     insertScore: async (request, response) => {
         try {
@@ -53,15 +54,14 @@ module.exports = {
             let index = data.map(function (e) { return e.clubname }).indexOf(clubname);
             console.log(index, 'index')
             if (++index == 0) {
-                helpers.customErrorResponse(response, 404, "Not Found!")
+                helper.customErrorResponse(response, 404, "Not Found!")
             } else {
                 const data = result[--index]
                 data.standing = ++index
                 helper.response(response, 200, data)
             }
         }
-        catch{
-            console.log(error)
+        catch(error){
             helper.customErrorResponse(response, 404, 'error')
 
         }
