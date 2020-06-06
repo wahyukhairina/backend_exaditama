@@ -24,7 +24,7 @@ module.exports = {
                 clubname: [clubhome, clubaway],
                 clubpoints: [homepoints, awaypoints]
             }
-         await model.insertScore(data)
+            await model.insertScore(data)
             helper.response(response, 200, request.body, "Data has been recorded")
         } catch (error) {
             console.log(error)
@@ -34,7 +34,7 @@ module.exports = {
     },
 
     allStanding: async (request, response) => {
-        try{
+        try {
             const result = await model.getAll();
             helper.response(response, 200, result)
         }
@@ -43,18 +43,18 @@ module.exports = {
             helper.customErrorResponse(response, 404, 'error')
         }
     },
-    
+
     clubRank: async (request, response) => {
-        try{
+        try {
             const clubname = request.query.clubname;
-          
+
             const result = await model.getAll()
             const data = result;
-            let index = data.map(function(e) { return e.clubname}).indexOf(clubname);
+            let index = data.map(function (e) { return e.clubname }).indexOf(clubname);
             console.log(index, 'index')
-            if(++index == 0) {
-               helpers.customErrorResponse(response, 404, "Not Found!")
-            }else {
+            if (++index == 0) {
+                helpers.customErrorResponse(response, 404, "Not Found!")
+            } else {
                 const data = result[--index]
                 data.standing = ++index
                 helper.response(response, 200, data)
@@ -63,7 +63,7 @@ module.exports = {
         catch{
             console.log(error)
             helper.customErrorResponse(response, 404, 'error')
-      
+
         }
     }
 }
