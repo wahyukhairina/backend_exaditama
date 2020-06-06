@@ -57,7 +57,15 @@ DB_PASSWORD = "YOUR PASSWORD"
 DB_NAME = "YOUR DATABASE NAME"
 PORT = Your Port
 ```
+
+in package.json add :
+```bash
+"scripts": {
+    "start": "nodemon index.js"
+  },
+```
 ### Start Development Server
+
 ```bash
 $ npm start
 ```
@@ -74,8 +82,18 @@ $ npm start
 
 ---
 
-##API
- <img width="800" src='https://user-images.githubusercontent.com/61218212/83933115-6d7e7500-a7d8-11ea-9759-e91676254d23.jpg' />
+## API
+
+### Record Game
+<p align="center"> <img width="500" src='https://user-images.githubusercontent.com/61218212/83933115-6d7e7500-a7d8-11ea-9759-e91676254d23.jpg' /> </p>
+
+### League Standing
+<p align="center"> <img width="500" src='https://user-images.githubusercontent.com/61218212/83933208-3197df80-a7d9-11ea-8acd-16af19e0ba31.jpg' /> </p>
+
+### Club Rank
+<p align="center"> <img width="500" src='https://user-images.githubusercontent.com/61218212/83933222-4d02ea80-a7d9-11ea-81d4-11d666b1d92e.jpg' /> </p>
+
+---
 
 ## License
 
